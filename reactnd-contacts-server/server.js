@@ -4,7 +4,7 @@ const cors = require("cors");
 const config = require("./config");
 const path = require("path");
 const contacts = require("./contacts");
-
+//some comment made to trigger the pipeline run in CircleCI
 const app = express();
 
 app.use(express.static("public"));
@@ -29,11 +29,13 @@ app.use((req, res, next) => {
 });
 
 app.get("/contacts", async (req, res) => {
-  res.send(contacts.defaultData.contacts.map((contact) => ({
-    id: contact.id,
-    name: contact.name,
-    email: contact.email
-  })));
+  res.send(
+    contacts.defaultData.contacts.map((contact) => ({
+      id: contact.id,
+      name: contact.name,
+      email: contact.email,
+    }))
+  );
 });
 
 app.delete("/contacts/:id", (req, res) => {
