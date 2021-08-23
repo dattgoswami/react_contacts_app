@@ -13,8 +13,8 @@ jobs:
       - checkout
       # install dependencies in both apps
       - run:
-        name: Installing dependencies
-        command: npm install yarn
+          name: Installing dependencies
+          command: npm install yarn
       - run:
           name: Front-End Install
           command: |
